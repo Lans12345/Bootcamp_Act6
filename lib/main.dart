@@ -45,13 +45,14 @@ class MyApp extends StatelessWidget {
               ),
             ),
           ),
-          FeedItem(
-            title: 'Title 1',
-            description: 'Description 1',
+          const FeedItem(
+            title: 'Male',
+            description: 'Person is Male',
           ),
-          FeedItem(
-            title: 'Title 2',
-            description: 'Description 2',
+          const FeedItem(
+            title: 'Female',
+            description: 'Person is Female',
+            icon: Icons.female,
           ),
         ]),
       ),

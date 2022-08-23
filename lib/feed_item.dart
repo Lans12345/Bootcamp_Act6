@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 class FeedItem extends StatelessWidget {
-  FeedItem({required this.title, required this.description});
+  const FeedItem({required this.title, required this.description, this.icon});
 
-  late var title;
-  late var description;
+  final String title;
+  final String description;
+  final IconData? icon;
 
   @override
   Widget build(BuildContext context) {
@@ -21,14 +22,38 @@ class FeedItem extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Container(
-                decoration: const BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.blue,
-                ),
-                height: 80,
-                width: 80,
-              ),
+              icon != null
+                  ? Container(
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.blue,
+                      ),
+                      child: Icon(
+                        icon,
+                        color: Colors.white,
+                        size: 48,
+                      ),
+                      height: 80,
+                      width: 80,
+                    )
+                  : Container(
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.grey,
+                      ),
+                      height: 80,
+                      width: 80,
+                      child: const Center(
+                        child: Text(
+                          'No Icon',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
               const SizedBox(
                 width: 30,
               ),
