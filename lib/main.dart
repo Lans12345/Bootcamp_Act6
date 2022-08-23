@@ -1,4 +1,5 @@
 import 'package:day006_ui_clone/feed_item.dart';
+import 'package:day006_ui_clone/story_item.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -26,20 +27,25 @@ class MyApp extends StatelessWidget {
               child: Center(
                 child: Row(
                   children: [
-                    for (int i = 0; i <= 3; i++) ...[
-                      const SizedBox(
-                        width: 5,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.amber,
-                        ),
-                        margin: const EdgeInsets.only(left: 20),
-                        height: 180,
-                        width: 130,
-                      ),
-                    ],
+                    const SizedBox(
+                      width: 5,
+                    ),
+                    StoryItem(
+                      color: Colors.red,
+                      text: 'Red',
+                    ),
+                    StoryItem(
+                      color: Colors.blue,
+                      text: 'Blue',
+                    ),
+                    StoryItem(
+                      color: Colors.green,
+                      text: 'Green',
+                    ),
+                    StoryItem(
+                      color: Colors.black,
+                      text: 'Black',
+                    ),
                   ],
                 ),
               ),
